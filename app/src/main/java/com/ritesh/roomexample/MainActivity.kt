@@ -15,8 +15,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        database= Room.databaseBuilder(applicationContext,
-                        ContactDatabase::class.java,"contactDB").build()
+
+        /*database= Room.databaseBuilder(applicationContext,
+                        ContactDatabase::class.java,"contactDB").build()*/
+
+        database = ContactDatabase.getDatabase(this)
 
         /**** create a coroutine ***/
         GlobalScope.launch {
