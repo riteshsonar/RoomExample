@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.room.Room
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         /**** create a coroutine ***/
         GlobalScope.launch {
 
-        database.contactDao().insertContact(Contact(0,"john","90989890"))
+        database.contactDao().insertContact(Contact(0,"john","90989890", Date()))
         }
     }
     fun getData(view : View){
